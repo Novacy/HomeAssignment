@@ -1,0 +1,89 @@
+[
+    {
+        "Name": "Novacy",
+        "Account": {
+            "name": "Acme Inc."
+        },
+        "Activity": [
+            {
+                "date": "2023-02-15",
+                "is_inbound": true,
+                "title": "Initial call"
+            },
+            {
+                "date": "2023-02-01",
+                "is_inbound": false,
+                "title": "Follow-up email"
+            }
+        ],
+        "Last meeting": "2022-12-15",
+        "Next meeting": "2023-03-01",
+        "Owner": "Jane",
+        "Stage": "Prospecting"
+    },
+    {
+        "Name": "Maya deal",
+        "Account": {
+            "name": "Acme"
+        },
+        "Activity": [
+            {
+                "date": "2023-02-01",
+                "is_inbound": true,
+                "title": "Initial call"
+            },
+            {
+                "date": "2023-02-11",
+                "is_inbound": false,
+                "title": "Follow-up email"
+            },
+            {
+                "date": "2023-02-21",
+                "is_inbound": false,
+                "title": "Closing email"
+            }
+        ],
+        "Last meeting": "2022-11-23",
+        "Next meeting": "2023-02-28",
+        "Owner": "Mike",
+        "Stage": "Negotiation"
+    },
+    {
+        "Name": "Codeme 1",
+        "Account": {
+            "name": "Codeme Inc."
+        },
+        "Activity": [
+            {
+                "date": "2023-02-03",
+                "is_inbound": true,
+                "title": "Initial call"
+            },
+            {
+                "date": "2023-02-17",
+                "is_inbound": true,
+                "title": "Follow-up email"
+            },
+            {
+                "date": "2023-02-17",
+                "is_inbound": false,
+                "title": "Closing email"
+            }
+        ],
+        "Last meeting": "2022-10-31",
+        "Next meeting": "2023-03-15",
+        "Owner": "Sarah",
+        "Stage": "Qualification"
+    },
+    {
+        "Name": "Iphone 20s",
+        "Account": {
+            "name": "Apple"
+        },
+        "Activity": [],
+        "Last meeting": "2022-09-27",
+        "Next meeting": "2023-03-10",
+        "Owner": "David",
+        "Stage": "Closing"
+    }
+]
