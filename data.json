@@ -19,7 +19,8 @@
         "Last meeting": "2022-12-15",
         "Next meeting": "2023-03-01",
         "Owner": "Jane",
-        "Stage": "Prospecting"
+        "Stage": "Prospecting",
+        "Amount": 1000
     },
     {
         "Name": "Maya deal",
@@ -46,7 +47,8 @@
         "Last meeting": "2022-11-23",
         "Next meeting": "2023-02-28",
         "Owner": "Mike",
-        "Stage": "Negotiation"
+        "Stage": "Negotiation",
+        "Amount": 5000
     },
     {
         "Name": "Codeme 1",
@@ -73,7 +75,8 @@
         "Last meeting": "2022-10-31",
         "Next meeting": "2023-03-15",
         "Owner": "Sarah",
-        "Stage": "Qualification"
+        "Stage": "Qualification",
+        "Amount": 10000
     },
     {
         "Name": "Iphone 20s",
@@ -84,6 +87,7 @@
         "Last meeting": "2022-09-27",
         "Next meeting": "2023-03-10",
         "Owner": "David",
-        "Stage": "Closing"
+        "Stage": "Closing",
+        "Amount": 53050
     }
 ]
