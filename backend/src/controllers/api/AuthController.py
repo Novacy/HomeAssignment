@@ -11,7 +11,7 @@ class AuthController:
         pass
 
     async def login(self, request: LoginRequest, user_dal: UserDAL = Depends(get_user_deal)):
-        return await user_dal.create_user('abc', request.email, request.password)
+        return await user_dal.create_user('Admin', request.email, request.password)
         # return {'hello': 'request', 'request': request}
 
     async def logout(self):

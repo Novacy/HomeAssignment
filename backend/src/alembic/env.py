@@ -2,6 +2,7 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+from src.config.config import settings
 
 from alembic import context
 
@@ -9,7 +10,7 @@ from alembic import context
 # access to the values within the .ini file in use.
 config = context.config
 
-config.set_main_option("sqlalchemy.url", f"mysql://root:@127.0.0.1:3306/todos")
+config.set_main_option("sqlalchemy.url", f"{settings.DB_DIALECT}://{settings.DB_USERNAME}:{settings.DB_PASSWORD}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}")
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
