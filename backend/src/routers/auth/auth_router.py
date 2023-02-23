@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends, Response
+from fastapi import APIRouter, Depends
+from fastapi.responses import JSONResponse
 from src.requests.auth.LoginRequest import LoginRequest
 from src.requests.auth.RegisterRequest import RegisterRequest
 from src.controllers.api.AuthController import AuthController
@@ -14,11 +15,10 @@ router = APIRouter(
 @router.post("/login")
 async def login(request: LoginRequest,
                 user_dal: UserDAL = Depends(get_user_deal),
-                auth_controller: AuthController = Depends(AuthController)):
-    # return await user_dal.create_user('request.name', request.email, request.password)
+                auth_controller: AuthController = Depends(AuthController))->JSONResponse:
     return await auth_controller.login(request, user_dal)
 
 
 @router.get("/logout")
-async def logout(auth_controller: AuthController = Depends(AuthController)):
+async def logout(auth_controller: AuthController = Depends(AuthController))->JSONResponse:
     return await auth_controller.logout()
