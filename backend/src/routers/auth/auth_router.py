@@ -15,10 +15,16 @@ router = APIRouter(
 @router.post("/login")
 async def login(request: LoginRequest,
                 user_dal: UserDAL = Depends(get_user_deal),
-                auth_controller: AuthController = Depends(AuthController))->JSONResponse:
+                auth_controller: AuthController = Depends(AuthController)) -> JSONResponse:
     return await auth_controller.login(request, user_dal)
 
 
 @router.get("/logout")
-async def logout(auth_controller: AuthController = Depends(AuthController))->JSONResponse:
+async def logout(auth_controller: AuthController = Depends(AuthController)) -> JSONResponse:
     return await auth_controller.logout()
+
+
+@router.post("/register")
+async def register(request: RegisterRequest, user_dal: UserDAL = Depends(get_user_deal),
+                   auth_controller: AuthController = Depends(AuthController)) -> JSONResponse:
+    return await auth_controller.register(request, user_dal)

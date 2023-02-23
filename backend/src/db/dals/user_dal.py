@@ -16,7 +16,7 @@ class UserDAL:
         self.db_session.add(new_user)
         await self.db_session.flush()
 
-    async def get_all_books(self) -> List[User]:
+    async def get_all_users(self) -> List[User]:
         q = await self.db_session.execute(select(User).order_by(User.id))
         return q.scalars().all()
 
@@ -30,3 +30,7 @@ class UserDAL:
             q = q.values(password=password)
         q.execution_options(synchronize_session="fetch")
         await self.db_session.execute(q)
+
+    async def get_user_by_email(self, email: str) -> User:
+        q = await self.db_session.execute(select(User).where(User.email == email).order_by(User.id))
+        return q.scalars().first()

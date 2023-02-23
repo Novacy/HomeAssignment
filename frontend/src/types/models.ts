@@ -36,10 +36,10 @@ export type Accounts = Array<Account>
 export interface Deal {
   id: number
   name: string
-  account: Account
-  activity?: Activities
-  last_meeting: Date
-  next_meeting: Date
+  // account: Account
+  // activity?: Activities
+  // last_meeting: Date
+  // next_meeting: Date
   owner: string
   stage: string
   amount: number

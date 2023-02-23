@@ -3,4 +3,6 @@ from typing import Optional, Union, List
 
 
 class RegisterRequest(BaseModel):
-    pass
+    name: str
+    email: str
+    password: str
