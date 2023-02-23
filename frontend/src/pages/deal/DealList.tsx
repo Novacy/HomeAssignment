@@ -9,7 +9,7 @@ import { Deal } from '../../types/models'
 
 function DealList() {
   const dispatch = useDispatch<AppDispatch>()
-  const { deals, isLoading, isSuccess, isError, message } = useSelector(
+  const { deals, isLoading, isSuccess } = useSelector(
     (state: RootState) => state.deal
   )
 
@@ -49,25 +49,15 @@ function DealList() {
                   </tr>
                 </thead>
                 <tbody>
-                  {deals.map((deal) => (
-                    <DealItem key={deal.id} deal={deal} />
+                  {deals.map((deal: Deal) => (
+                    <DealItem
+                      id={0}
+                      name={deal.name}
+                      owner={deal.owner}
+                      stage={deal.stage}
+                      amount={0}
+                    />
                   ))}
-                  {/* <tr className='border-b dark:border-neutral-500'>
-                    <td className='whitespace-nowrap  px-6 py-4 font-medium'>
-                      1
-                    </td>
-                    <td className='whitespace-nowrap  px-6 py-4'>Mark</td>
-                    <td className='whitespace-nowrap  px-6 py-4'>Otto</td>
-                    <td className='whitespace-nowrap  px-6 py-4'>@mdo</td>
-                  </tr> */}
-                  {/* <tr className='border-b dark:border-neutral-500'>
-                    <td className='whitespace-nowrap  px-6 py-4 font-medium'>
-                      2
-                    </td>
-                    <td className='whitespace-nowrap  px-6 py-4 '>Jacob</td>
-                    <td className='whitespace-nowrap  px-6 py-4'>Thornton</td>
-                    <td className='whitespace-nowrap  px-6 py-4'>@fat</td>
-                  </tr> */}
                 </tbody>
               </table>
             </div>
