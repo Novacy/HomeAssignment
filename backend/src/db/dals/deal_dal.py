@@ -16,7 +16,7 @@ class DealDAL:
         self.db_session.add(new_book)
         await self.db_session.flush()
 
-    async def get_all_books(self) -> List[Deal]:
+    async def get_all_deals(self) -> List[Deal]:
         q = await self.db_session.execute(select(Deal).order_by(Deal.id))
         return q.scalars().all()
 
