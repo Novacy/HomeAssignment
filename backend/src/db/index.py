@@ -4,3 +4,4 @@
 from src.db.config import Base
 from src.db.models.deal import Deal
 from src.db.models.user import User
+from src.db.models.activity import Activity
