@@ -5,6 +5,7 @@ from src.requests.auth.RegisterRequest import RegisterRequest
 from src.controllers.api.AuthController import AuthController
 from src.db.dals.user_dal import UserDAL
 from src.db.dependencies import get_user_deal
+from src.middleware.auth import auth
 
 router = APIRouter(
     prefix='/auth',
@@ -20,7 +21,7 @@ async def login(request: LoginRequest,
 
 
 @router.get("/logout")
-async def logout(auth_controller: AuthController = Depends(AuthController)) -> JSONResponse:
+async def logout(auth_controller: AuthController = Depends(AuthController),dependencies = Depends(auth())) -> JSONResponse:
     return await auth_controller.logout()
 
 
