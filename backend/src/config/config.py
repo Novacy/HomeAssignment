@@ -11,6 +11,7 @@ class Settings:
     DB_USERNAME=os.getenv('DB_USERNAME')
     DB_PASSWORD=os.getenv('DB_PASSWORD')
     SECRET_KEY=os.getenv('SECRET_KEY')
-    ALGORITHM=os.getenv('ALGORITHM') 
+    ALGORITHM=os.getenv('ALGORITHM')
+    ACCESS_TOKEN_EXPIRE_MINUTES=os.getenv('ACCESS_TOKEN_EXPIRE_MINUTES') 
 
 settings = Settings()
