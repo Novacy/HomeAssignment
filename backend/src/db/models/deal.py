@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy.orm import relationship
+from src.db.models.activity import Activity
 from src.db.config import Base
 
 
@@ -15,4 +16,4 @@ class Deal(Base):
     amount = Column(Integer, nullable=True)
     account_id = Column(Integer, nullable=True)
 
-    activities = relationship("Activity", back_populates="deal")
+    activities = relationship(Activity, back_populates="deal")

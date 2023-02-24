@@ -3,7 +3,6 @@ from typing import List, Optional
 from sqlalchemy import update
 from sqlalchemy.future import select
 from sqlalchemy.orm import Session
-from passlib.context import CryptContext
 
 from src.db.models.user import User
 
@@ -13,10 +12,10 @@ class UserDAL:
         self.db_session = db_session
 
     async def create_user(self, name: str, email: str, password: int):
-        bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-        new_user = User(name=name, email=email, password=bcrypt_context.hash(password))
+        new_user = User(name=name, email=email, password=password)
         self.db_session.add(new_user)
         await self.db_session.flush()
+        return new_user
     
 
     async def get_all_users(self) -> List[User]:
