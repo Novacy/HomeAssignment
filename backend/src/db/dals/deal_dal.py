@@ -2,6 +2,7 @@ from typing import List, Optional
 
 from sqlalchemy import update
 from sqlalchemy.future import select
+from sqlalchemy.orm import subqueryload
 from sqlalchemy.orm import Session
 
 from src.db.models.deal import Deal
@@ -18,6 +19,10 @@ class DealDAL:
 
     async def get_all_deals(self) -> List[Deal]:
         q = await self.db_session.execute(select(Deal).order_by(Deal.id))
+        return q.scalars().all()
+        
+    async def get_all_deals_with_activities(self) -> List[Deal]:
+        q = await self.db_session.execute(select(Deal).options(subqueryload(Deal.activities)).order_by(Deal.id))
         return q.scalars().all()
 
     async def update_book(self, book_id: int, name: Optional[str], author: Optional[str], release_year: Optional[int]):

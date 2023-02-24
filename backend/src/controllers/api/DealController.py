@@ -12,5 +12,5 @@ class DealController:
 
 
     async def get_deals(self, deal_dal: DealDAL = Depends(get_deal_dal)):
-        deals = await deal_dal.get_all_deals()
+        deals = await deal_dal.get_all_deals_with_activities()
         return await respond('deals fetched successful', 200, jsonable_encoder(deals))
