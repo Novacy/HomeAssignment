@@ -38,24 +38,42 @@ function DealList() {
                       #
                     </th>
                     <th scope='col' className=' px-6 py-4'>
-                      First
+                      Deal
                     </th>
                     <th scope='col' className=' px-6 py-4'>
-                      Last
+                      Activity
                     </th>
                     <th scope='col' className=' px-6 py-4'>
-                      Handle
+                      Last Activity
                     </th>
+                    <th scope='col' className=' px-6 py-4'>
+                      Next Activity
+                    </th>
+                    <th scope='col' className=' px-6 py-4'>
+                      Owner
+                    </th>
+                    <th scope='col' className=' px-6 py-4'>
+                      Stage
+                    </th>
+                    <th scope='col' className=' px-6 py-4'>
+                      Amount
+                    </th>
+                    <th scope='col' className=' px-6 py-4'></th>
                   </tr>
                 </thead>
                 <tbody>
                   {deals.map((deal: Deal) => (
                     <DealItem
-                      id={0}
+                      key={deal.id}
+                      id={deal.id}
                       name={deal.name}
                       owner={deal.owner}
                       stage={deal.stage}
-                      amount={0}
+                      account={deal.account}
+                      activity={deal.activity}
+                      last_meeting={deal.last_meeting}
+                      next_meeting={deal.next_meeting}
+                      amount={deal.amount}
                     />
                   ))}
                 </tbody>
