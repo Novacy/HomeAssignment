@@ -33,9 +33,8 @@ export const getDeals = createAsyncThunk<
   'deal/list',
   async (payload: DealListPayload, { getState, rejectWithValue }) => {
     try {
-      const token = getState().auth.user
-      console.log('deals slice', token)
-      if (token) return await dealService.listDeals(payload, 'token')
+      const token = getState().auth.user?.token
+      if (token) return await dealService.listDeals(payload, token)
     } catch (err: any) {
       let error: AxiosError<ValidationErrors> = err
       if (!error.response) {
