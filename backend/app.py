@@ -10,6 +10,7 @@ app.include_router(index.baseRouter)
 
 origins = [
     "http://localhost:3000",
+    "https://novacy.track-progress.com"
 ]
 
 app.add_middleware(
