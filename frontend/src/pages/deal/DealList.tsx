@@ -40,7 +40,11 @@ function DealList() {
                     <th scope='col' className=' px-6 py-4'>
                       Deal
                     </th>
-                    <th scope='col' className=' px-6 py-4'>
+                    <th
+                      scope='col'
+                      className=' py-4'
+                      style={{ minWidth: '100px', maxWidth: '100px' }}
+                    >
                       Activity
                     </th>
                     <th scope='col' className=' px-6 py-4'>
@@ -70,7 +74,7 @@ function DealList() {
                       owner={deal.owner}
                       stage={deal.stage}
                       account={deal.account}
-                      activity={deal.activity}
+                      activities={deal.activities}
                       last_meeting={deal.last_meeting}
                       next_meeting={deal.next_meeting}
                       amount={deal.amount}

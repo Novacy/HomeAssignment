@@ -1,26 +1,44 @@
+import moment from 'moment'
 import { Deal } from '../../types/models'
+import DealActivity from './DealActivity'
 
 function DealItem(deal: Deal) {
-  const { id, name, last_meeting, next_meeting, owner, stage, amount } = deal
+  const {
+    id,
+    name,
+    account,
+    activities,
+    last_meeting,
+    next_meeting,
+    owner,
+    stage,
+    amount,
+  } = deal
   return (
     <>
       <tr className='border-b dark:border-neutral-500'>
         <td className='whitespace-nowrap  px-6 py-4 font-medium'>{id}</td>
         <td className='whitespace-nowrap  px-6 py-4 '>{name}</td>
-        <td className='whitespace-nowrap  px-6 py-4 '>ACTIVITY</td>
+        {activities?.length ? (
+          <DealActivity
+            activities={activities}
+            id={id}
+            name={name}
+            account={account}
+            last_meeting={last_meeting}
+            next_meeting={next_meeting}
+            owner={owner}
+            stage={stage}
+            amount={amount}
+          />
+        ) : (
+          <td className='whitespace-nowrap  px-6 py-4 '></td>
+        )}
         <td className='whitespace-nowrap  px-6 py-4'>
-          {new Date(last_meeting).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })}
+          {moment(last_meeting).format('MMM. Do, YYYY')}
         </td>
         <td className='whitespace-nowrap  px-6 py-4'>
-          {new Date(next_meeting).toLocaleDateString('en-us', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-          })}
+          {moment(next_meeting).format('MMM. Do, YYYY')}
         </td>
         <td className='whitespace-nowrap  px-6 py-4'>{owner}</td>
         <td className='whitespace-nowrap  px-6 py-4'>{stage}</td>
