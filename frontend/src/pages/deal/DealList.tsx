@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '../../app/strore'
 import { getDeals, reset } from '../../features/deal/dealSlice'
+import  authService  from '../../features/auth/authService'
 import Spinner from '../../components/global/Spinner'
 import DealItem from '../../components/deal/DealItem'
 import { Deal } from '../../types/models'
@@ -12,6 +13,11 @@ function DealList() {
   const { deals, isLoading, isSuccess } = useSelector(
     (state: RootState) => state.deal
   )
+
+  const logoutUser = () => {
+    authService.logout();
+    window.location.reload();
+  }
 
   useEffect(() => {
     dispatch(getDeals({}))
@@ -26,7 +32,10 @@ function DealList() {
   }
   return (
     <>
-      <div>DealList</div>
+      <div className='flex justify-between py-1 px-5'>
+        DealList
+        <button className='rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' onClick={logoutUser}>Logout</button>
+      </div>
       <div className='flex flex-col'>
         <div className='overflow-x-auto sm:-mx-6 lg:-mx-8'>
           <div className='inline-block min-w-full py-2 sm:px-6 lg:px-8'>
