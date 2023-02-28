@@ -37,7 +37,7 @@ export interface Deal {
   id: number
   name: string
   account: Account
-  activity?: Activities
+  activities?: Activities
   last_meeting: Date
   next_meeting: Date
   owner: string
