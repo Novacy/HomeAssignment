@@ -15,3 +15,210 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.activity_timeline_ul_holder {
+  width: 180px;
+  height: 10px;
+  margin: 0 auto;
+  padding: 0 4px;
+  z-index: 1;
+  position: relative;
+}
+
+.activity_timeline_ul_holder::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #e6e6ec;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.activity_timeline_ul_holder li {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.activity_timeline_ul_holder li.item-1 {
+  left: 2%;
+}
+
+.activity_timeline_ul_holder li.item-2 {
+  left: 5%;
+}
+
+.activity_timeline_ul_holder li.item-3 {
+  left: 9%;
+}
+
+.activity_timeline_ul_holder li.item-4 {
+  left: 13%;
+}
+
+.activity_timeline_ul_holder li.item-5 {
+  left: 17%
+}
+
+.activity_timeline_ul_holder li.item-6 {
+  left: 20%;
+}
+
+.activity_timeline_ul_holder li.item-7 {
+  left: 23%;
+}
+
+.activity_timeline_ul_holder li.item-8 {
+  left: 27%;
+}
+
+.activity_timeline_ul_holder li.item-9 {
+  left: 30%;
+}
+
+.activity_timeline_ul_holder li.item-10 {
+  left: 33%;
+}
+
+.activity_timeline_ul_holder li.item-11 {
+  left: 37%;
+}
+
+.activity_timeline_ul_holder li.item-12 {
+  left: 40%;
+}
+
+.activity_timeline_ul_holder li.item-13 {
+  left: 43%;
+}
+
+.activity_timeline_ul_holder li.item-14 {
+  left: 47%;
+}
+
+.activity_timeline_ul_holder li.item-15 {
+  left: 50%;
+}
+
+.activity_timeline_ul_holder li.item-16 {
+  left: 53%;
+}
+
+.activity_timeline_ul_holder li.item-17 {
+  left: 57%;
+}
+
+.activity_timeline_ul_holder li.item-18 {
+  left: 60%;
+}
+
+.activity_timeline_ul_holder li.item-19 {
+  left: 63%;
+}
+
+.activity_timeline_ul_holder li.item-20 {
+  left: 67%;
+}
+
+.activity_timeline_ul_holder li.item-21 {
+  left: 70%;
+}
+
+.activity_timeline_ul_holder li.item-22 {
+  left: 73%;
+}
+
+.activity_timeline_ul_holder li.item-23 {
+  left: 76%;
+}
+
+.activity_timeline_ul_holder li.item-24 {
+  left: 78%;
+}
+
+.activity_timeline_ul_holder li.item-25 {
+  left: 80%;
+}
+
+.activity_timeline_ul_holder li.item-26 {
+  left: 84%;
+}
+
+.activity_timeline_ul_holder li.item-27 {
+  left: 86%;
+}
+
+.activity_timeline_ul_holder li.item-28 {
+  left: 88%;
+}
+
+.activity_timeline_ul_holder li.item-29 {
+  left: 90%;
+}
+
+.activity_timeline_ul_holder li.item-30 {
+  left: 93%;
+}
+
+.activity_timeline_ul_holder li.item-31 {
+  left: 96%;
+}
+
+.activity_timeline_ul_holder li::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #ccc;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.activity_timeline_ul_holder li.inbound::after {
+  background: #f6157e;
+}
+
+.activity_timeline_ul_holder li.bound::after {
+  background: #3507a1;
+}
+
+
+.activity_timeline_ul_holder li:hover .tooltip {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+
+.activity_timeline_ul_holder li .tooltip {
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  padding: 2px 6px;
+  top: -25px;
+  left: 50%;
+  white-space: nowrap;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 99999;
+  visibility: hidden;
+}
+
+/* .activity_timeline_ul_holder li.inbound .tooltip {
+  background: #f6157e;
+}
+
+.activity_timeline_ul_holder li.bound .tooltip {
+  background: #3507a1;
+} */

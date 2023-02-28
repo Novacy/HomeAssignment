@@ -42,8 +42,8 @@ function DealList() {
                     </th>
                     <th
                       scope='col'
-                      className=' px-6 py-4'
-                      style={{ minWidth: '500px' }}
+                      className=' py-4'
+                      style={{ minWidth: '100px', maxWidth: '100px' }}
                     >
                       Activity
                     </th>

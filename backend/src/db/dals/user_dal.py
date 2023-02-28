@@ -22,7 +22,7 @@ class UserDAL:
         q = await self.db_session.execute(select(User).order_by(User.id))
         return q.scalars().all()
 
-    async def update_book(self, user_id: int, name: Optional[str], email: Optional[str], password: Optional[int]):
+    async def update_user(self, user_id: int, name: Optional[str], email: Optional[str], password: Optional[int]):
         q = update(User).where(User.id == user_id)
         if name:
             q = q.values(name=name)
