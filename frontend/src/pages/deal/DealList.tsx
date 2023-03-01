@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '../../app/strore'
 import { getDeals, reset } from '../../features/deal/dealSlice'
-import  authService  from '../../features/auth/authService'
 import Spinner from '../../components/global/Spinner'
 import DealItem from '../../components/deal/DealItem'
 import { Deal } from '../../types/models'
+import { logout } from '../../features/auth/authSlice'
 
 function DealList() {
   const dispatch = useDispatch<AppDispatch>()
@@ -15,7 +15,7 @@ function DealList() {
   )
 
   const logoutUser = () => {
-    authService.logout();
+    dispatch(logout());
     window.location.reload();
   }
 
